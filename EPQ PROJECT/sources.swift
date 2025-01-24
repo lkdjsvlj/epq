@@ -29,10 +29,12 @@ struct sources: View {
                 }//zstack
                 
                 Spacer()
+                
                 Text("Sources")
                     .padding()
                     .font(.title3)
                     .foregroundColor(Color("AccentColor"))
+                
                 Spacer()
                 
                 Text("One way to ensure you’re receiving reliable medical advice is to check the site’s sources and affiliations. Do you trust them?")
@@ -42,6 +44,7 @@ struct sources: View {
                     .fontWeight(.regular)
                     .foregroundColor(Color("dark blue"))
                     .multilineTextAlignment(.center)
+                
                 Spacer()
                 
                 Text("Websites")
@@ -49,14 +52,15 @@ struct sources: View {
                     .fontWeight(.regular)
                     .foregroundColor(Color("dark blue"))
                     .multilineTextAlignment(.center)
+                
                 List {
                     Link(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=URL@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/) {
                         Text("link1")
-                    }
+                    }//link
                     Link(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=URL@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/) {
                         Text("link2")
-                    }
-                }
+                    }//link
+                }//list
                 .cornerRadius(12)
                 
                 Text("Literature")
@@ -64,10 +68,11 @@ struct sources: View {
                     .fontWeight(.regular)
                     .foregroundColor(Color("dark blue"))
                     .multilineTextAlignment(.center)
-                List{
+                
+                List {
                     Text("book")
                     Text("article")
-                }
+                }//list
                 .font(.body)
                 .fontWeight(.regular)
                 .foregroundColor(Color("dark blue"))
@@ -79,10 +84,11 @@ struct sources: View {
                     .fontWeight(.regular)
                     .foregroundColor(Color("dark blue"))
                     .multilineTextAlignment(.center)
-                List{
+                
+                List {
                     Text("museum")
                     Text("library")
-                }
+                }//list
                 .font(.body)
                 .fontWeight(.regular)
                 .foregroundColor(Color("dark blue"))

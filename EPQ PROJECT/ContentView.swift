@@ -10,8 +10,10 @@ import SwiftUI
 struct symptoms: View {
     @StateObject private var selectionModel = SymptomSelectionModel()
     var body: some View {
+        
         NavigationStack {
             VStack {
+                
                 ZStack {
                     Rectangle()
                         .fill(Color("med blue"))
@@ -28,24 +30,30 @@ struct symptoms: View {
                 }//zstack
                 
                 Spacer()
+                
                 Text("Symptoms")
                     .padding()
                     .font(.title3)
                     .foregroundColor(Color("AccentColor"))
+                
                 Spacer()
+                
                 Text("The more symptoms a diagnosis algorithm asks for and considers, the more accurate it is likely to be.")
                     .padding()
                     .font(.body)
                     .fontWeight(.regular)
                     .foregroundColor(Color("dark blue"))
                     .multilineTextAlignment(.center)
+                
                 Spacer()
+                
                 Text("Input your symptoms here. Click 'View Diagnosis' when you're ready.")
                     .padding()
                     .font(.body)
                     .fontWeight(.regular)
                     .foregroundColor(Color("dark blue"))
                     .multilineTextAlignment(.center)
+                
                 Spacer()
                 
                 List {
@@ -66,12 +74,11 @@ struct symptoms: View {
                     }
                     NavigationLink(destination: diagnosis()) {
                         Text("View Diagnosis")
-                    }//nlink
+                    }
                     .padding()
                     .background(Color("med blue"))
                     .foregroundColor(.white)
                     .cornerRadius(12)
-
                 }//list
                 .foregroundColor(Color("med blue"))
                 .cornerRadius(12)
@@ -116,7 +123,6 @@ struct SymptomSelectionView: View {
     var category: String
     var symptoms: [String]
     @ObservedObject var selectionModel: SymptomSelectionModel
-    
     @State private var selectedOptions: [Bool]
     
     init(category: String, symptoms: [String], selectionModel: SymptomSelectionModel) {
@@ -124,9 +130,10 @@ struct SymptomSelectionView: View {
         self.symptoms = symptoms
         self.selectionModel = selectionModel
         _selectedOptions = State(initialValue: Array(repeating: false, count: symptoms.count))
-    }
+    }//init
 
     var body: some View {
+        
         VStack {
             Text("Select your symptoms from \(category)")
                 .font(.title)
@@ -136,42 +143,40 @@ struct SymptomSelectionView: View {
             List {
                 ForEach(0..<symptoms.count, id: \.self) { index in
                     ChoiceRow(option: symptoms[index], isSelected: $selectedOptions[index])
-                }
-            }
+                }//foreach
+            }//list
             
-           
-        }
+        }//vstack
         .navigationTitle(category)
         .onDisappear {
-            // Update the global selectedSymptoms when this view disappears
             selectionModel.selectedSymptoms.append(contentsOf: getSelectedOptions())
-        }
+        }//ondisappear
     }
 
     func getSelectedOptions() -> [String] {
         zip(symptoms, selectedOptions)
             .filter { $0.1 }
             .map { $0.0 }
-    }
+    }//func
 }
 
 struct ChoiceRow: View {
     let option: String
     @Binding var isSelected: Bool
-
     var body: some View {
+        
         HStack {
             Text(option)
                 .foregroundColor(Color("med blue"))
             Spacer()
             Image(systemName: isSelected ? "checkmark.square" : "square")
                 .foregroundColor(isSelected ? Color("AccentColor") : Color("med blue"))
-
                 .onTapGesture {
                     isSelected.toggle()
-                }
-        }
+                }//ontap
+        }//hstack
         .padding()
+        
     }
 }
 

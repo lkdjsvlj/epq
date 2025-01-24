@@ -35,7 +35,7 @@ struct about: View {
                     Text("Symptoms, Reimagined.")
                         .font(.title3)
                         .foregroundColor(Color("med blue"))
-                }
+                }//vstack
                 .padding()
                 
                 Text("Welcome to Anamnesis, the app where real symptoms are reimagined for rare diseases.")
@@ -69,13 +69,13 @@ struct about: View {
                         VStack {
                             Image(systemName: "brain.head.profile")
                             Text("About")
-                        }
+                        }//vstack
                     }//nlink
                     NavigationLink(destination: symptoms()) {
                         VStack {
                             Image(systemName: "waveform.path.ecg.text.clipboard")
                             Text("Quiz")
-                        }
+                        }//vstack
                     }//nlink
                     NavigationLink(destination: info()) {
                         VStack {
