@@ -33,7 +33,7 @@ struct symptoms: View {
                 
                 Text("Symptoms")
                     .padding()
-                    .font(.title3)
+                    .font(.title)
                     .foregroundColor(Color("AccentColor"))
                 
                 Spacer()

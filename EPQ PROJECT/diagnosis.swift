@@ -124,8 +124,9 @@ struct DiagnosisView: View {
                     
                     Text("Leprosy")
                         .padding()
-                        .font(.title3)
+                        .font(.title)
                         .foregroundColor(Color("AccentColor"))
+                    Spacer()
                     
                     HStack {
                         Image("lep1")
@@ -147,10 +148,10 @@ struct DiagnosisView: View {
                         Text("It is curable with multidrug therapy.")
                     }//vstack
                     .padding()
-                    .padding()
+                    //.padding()
                     .foregroundColor(Color("med blue"))
                     .multilineTextAlignment(.center)
-                    .background(Rectangle().foregroundColor(Color("AccentColor")).opacity(0.2))
+                    //.background(Rectangle().foregroundColor(Color("med blue")).opacity(0.2))
                     .cornerRadius(12)
                     
                     HStack {
@@ -195,8 +196,6 @@ struct DiagnosisView: View {
                         .padding()
                         .foregroundColor(Color("AccentColor"))
                         .multilineTextAlignment(.center)
-                        .background(Rectangle().foregroundColor(Color("AccentColor")).opacity(0.1))
-                        .cornerRadius(12)
                         
                     }//hstack
                     .padding()

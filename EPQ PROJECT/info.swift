@@ -32,7 +32,7 @@ struct info: View {
                 
                 Text("Warning Signs")
                     .padding()
-                    .font(.title3)
+                    .font(.title)
                     .foregroundColor(Color("AccentColor"))
                     .multilineTextAlignment(.center)
                 
@@ -89,8 +89,10 @@ struct info: View {
                         Text("Poorly-formatted content")
                         Text("Unprofessional finish")
                     }//menu
+                    Spacer()
                 }//vstack
                 .padding()
+                
                 Spacer()
                 
             }//vstack

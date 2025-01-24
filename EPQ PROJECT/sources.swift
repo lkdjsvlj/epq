@@ -32,7 +32,7 @@ struct sources: View {
                 
                 Text("Sources")
                     .padding()
-                    .font(.title3)
+                    .font(.title)
                     .foregroundColor(Color("AccentColor"))
                 
                 Spacer()
