@@ -63,18 +63,24 @@ struct DiagnosisView: View {
             return 0
         }//let
         
+        //initialise points
         var points = 0
         
+        //if the input symptoms exactly match a disease's symptom set, 5 points are granted to that disease
+        //set function means order is disregarded
         if Set(diseaseSymptoms) == Set(selectionModel.selectedSymptoms) {
             points += 5
         }//if
 
+        //iterates through input symptoms, granting 1 point to each disease with said symptom in their symptom set
         for inputSymptom in selectionModel.selectedSymptoms {
             if diseaseSymptoms.contains(inputSymptom) {
                 points += 1
             }//if
         }//for
 
+        //calculates the absolute value of the difference between the number of input symptoms and the number of symptoms in a disease's symptom set
+        //subtracts difference from the disease's points
         let symptomCountDifference = abs(diseaseSymptoms.count - selectionModel.selectedSymptoms.count)
         points -= symptomCountDifference
 
